@@ -1,0 +1,89 @@
+﻿<Project
+    Sdk="Microsoft.NET.Sdk">
+    <PropertyGroup>
+        <PackageId>CYLee.Revit.AddinTemplate</PackageId>
+        <AssemblyName>CYLee.Revit.AddinTemplate</AssemblyName>
+        <Authors>CYLee</Authors>
+        <Company>CYLee</Company>
+        <PackageProjectUrl>https://www.cylee.com</PackageProjectUrl>
+        <Product>Revit addin</Product>
+        <Version>0.0.1</Version>
+    </PropertyGroup>
+    <PropertyGroup>
+        <TargetFramework>net48</TargetFramework>
+        <Platforms>x64</Platforms>
+        <OutputType>Library</OutputType>
+        <Prefer32Bit>false</Prefer32Bit>
+        <ImplicitUsings>disable</ImplicitUsings>
+        <Nullable>disable</Nullable>
+        <UseWPF>true</UseWPF>
+        <UseWindowsForms>false</UseWindowsForms>
+        <SignAssembly>False</SignAssembly>
+        <WarningLevel>4</WarningLevel>
+        <ErrorReport>prompt</ErrorReport>
+        <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+        <NeutralLanguage>zh-TW</NeutralLanguage>
+        <Configurations>De R17;De R18;De R19;De R20;De R21</Configurations>
+        <Configurations>$(Configurations);Re R17;Re R18;Re R19;Re R20;Re R21</Configurations>
+    </PropertyGroup>
+    <PropertyGroup
+        Condition="$(Configuration.Contains('De R'))">
+        <DebugType>full</DebugType>
+        <DebugSymbols>true</DebugSymbols>
+        <Optimize>false</Optimize>
+        <DefineConstants>$(DefineConstants);DEBUG</DefineConstants>
+        <BuildType>Debug</BuildType>
+    </PropertyGroup>
+    <PropertyGroup
+        Condition="$(Configuration.Contains('Re R'))">
+        <Optimize>true</Optimize>
+        <DebugType>none</DebugType>
+        <DefineConstants>$(DefineConstants);RELEASE</DefineConstants>
+        <BuildType>Release</BuildType>
+    </PropertyGroup>
+    <PropertyGroup
+        Condition="$(Configuration.Contains('R17'))">
+        <RevitVersion>2017</RevitVersion>
+        <DefineConstants>$(DefineConstants);R17</DefineConstants>
+        <DefineConstants>$(DefineConstants);R17_OR_GREATER</DefineConstants>
+    </PropertyGroup>
+    <PropertyGroup
+        Condition="$(Configuration.Contains('R18'))">
+        <RevitVersion>2018</RevitVersion>
+        <DefineConstants>$(DefineConstants);R18</DefineConstants>
+        <DefineConstants>$(DefineConstants);R17_OR_GREATER;R18_OR_GREATER</DefineConstants>
+    </PropertyGroup>
+    <PropertyGroup
+        Condition="$(Configuration.Contains('R19'))">
+        <RevitVersion>2019</RevitVersion>
+        <DefineConstants>$(DefineConstants);R19</DefineConstants>
+        <DefineConstants>$(DefineConstants);R17_OR_GREATER;R18_OR_GREATER;R19_OR_GREATER</DefineConstants>
+    </PropertyGroup>
+    <PropertyGroup
+        Condition="$(Configuration.Contains('R20'))">
+        <RevitVersion>2020</RevitVersion>
+        <DefineConstants>$(DefineConstants);R20</DefineConstants>
+        <DefineConstants>$(DefineConstants);R17_OR_GREATER;R18_OR_GREATER;R19_OR_GREATER;R20_OR_GREATER</DefineConstants>
+    </PropertyGroup>
+    <PropertyGroup
+        Condition="$(Configuration.Contains('R21'))">
+        <RevitVersion>2021</RevitVersion>
+        <DefineConstants>$(DefineConstants);R21</DefineConstants>
+        <DefineConstants>$(DefineConstants);R17_OR_GREATER;R18_OR_GREATER;R19_OR_GREATER;R20_OR_GREATER;R21_OR_GREATER</DefineConstants>
+    </PropertyGroup>
+    <PropertyGroup>
+        <OutputPath>..\bin\$(BuildType)$(RevitVersion)\</OutputPath>
+    </PropertyGroup>
+    <ItemGroup>
+        <Reference
+            Include="RevitAPI">
+            <HintPath>C:\Program Files\Autodesk\Revit $(RevitVersion)\RevitAPI.dll</HintPath>
+            <Private>False</Private>
+        </Reference>
+        <Reference
+            Include="RevitAPIUI">
+            <HintPath>C:\Program Files\Autodesk\Revit $(RevitVersion)\RevitAPIUI.dll</HintPath>
+            <Private>False</Private>
+        </Reference>
+    </ItemGroup>
+</Project>
