@@ -1,7 +1,7 @@
-﻿<Project
-    Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
     <PropertyGroup>
         <PackageId>CYLee.Revit.AddinTemplate</PackageId>
+		<RootNamespace>CYLee.Revit.AddinTemplate</RootNamespace>
         <AssemblyName>CYLee.Revit.AddinTemplate</AssemblyName>
         <Authors>CYLee</Authors>
         <Company>CYLee</Company>
@@ -18,7 +18,7 @@
         <Nullable>disable</Nullable>
         <UseWPF>true</UseWPF>
         <UseWindowsForms>false</UseWindowsForms>
-        <SignAssembly>False</SignAssembly>
+        <SignAssembly>false</SignAssembly>
         <WarningLevel>4</WarningLevel>
         <ErrorReport>prompt</ErrorReport>
         <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
