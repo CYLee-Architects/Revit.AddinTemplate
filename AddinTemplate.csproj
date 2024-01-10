@@ -6,7 +6,7 @@
         <Authors>CYLee</Authors>
         <Company>CYLee</Company>
         <PackageProjectUrl>https://www.cylee.com</PackageProjectUrl>
-        <Product>Revit addin</Product>
+        <Product>CYLee Revit Tools</Product>
         <Version>0.0.1</Version>
     </PropertyGroup>
     <PropertyGroup>
